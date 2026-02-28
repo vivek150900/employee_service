@@ -43,8 +43,11 @@ jobs:
             sleep 5
           done
 
+      - name: Build Project
+        run: mvn clean package
+
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: cicd-service-jar
+          name: microEmp-service-jar
           path: target/*.jar
